@@ -38,7 +38,8 @@ tree <- collapsibleTree( qol_indicator_dimension, hierarchy = c("Dimension","Ind
 tree
 
 
-# save widget
+# save as a widget
+# format is html
 saveWidget(tree, file=paste0( getwd(), "qol_tree.html"))
 
 
