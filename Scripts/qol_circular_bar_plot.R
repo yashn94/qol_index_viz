@@ -31,7 +31,9 @@ label_data$angle<-ifelse(angle < -90, angle+180, angle)
 
 circ <- qol_dimension_values %>% ggplot(aes(x = Dimensions,
                                             y= `qol 6`))+
-  geom_bar(stat = "identity",fill=alpha("skyblue", 0.7))+
+  geom_bar(stat = "identity", fill = c("#3E5D92", "#832A2F", "#ED8A73", "#CC5A31","#DEC478","#6E9C73","#7ABEBF"))+
+  #scale_fill_manual(values=c("#3E5D92", "#832A2F", "#ED8A73", "#CC5A31","#DEC478","#6E9C73","#7ABEBF"))+
+ # scale_colour_manual(values=c("#3E5D92", "#832A2F", "#ED8A73", "#CC5A31","#DEC478","#6E9C73","#7ABEBF"))+
   ylim(-100,120) +
   theme_minimal() +
   theme(
@@ -46,9 +48,6 @@ circ <- qol_dimension_values %>% ggplot(aes(x = Dimensions,
             
 
 circ
-
-
-
 
 
 
