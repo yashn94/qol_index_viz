@@ -27,27 +27,7 @@ label_data$hjust<-ifelse( angle < -90, 1, 0)
 # flip angle BY to make them readable
 label_data$angle<-ifelse(angle < -90, angle+180, angle)
 
-circ_bar <- ggplot(qol_dimension_values,x=as.factor(ID), y=`qol 6`)+
-  # This add the bars with a blue color
-  geom_bar(qol_dimension_values,x=qol_dimension_values$ID, y = qol_dimension_values$`qol 6`,  stat="identity", fill=alpha("skyblue", 0.7)) +
-  ylim(-100,120) +
-  # Custom the theme: no axis title and no cartesian grid
-  theme_minimal() +
-  theme(
-    axis.text = element_blank(),
-    axis.title = element_blank(),
-    panel.grid = element_blank(),
-    plot.margin = unit(rep(-1,4), "cm")      # Adjust the margin to make in sort labels are not truncated!
-  ) +
-  coord_polar(start = 0) 
-  # Add the labels, using the label_data dataframe that we have created before
-  #geom_text(data=label_data, aes(x=id, y=qol_dimension_values$`qol 6`+10, label=individual, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=2.5, angle= label_data$angle, inherit.aes = FALSE ) 
-  
-circ_bar
-
-
-
-#TAKE 2
+#circular bar plot
 
 circ <- qol_dimension_values %>% ggplot(aes(x = Dimensions,
                                             y= `qol 6`))+
