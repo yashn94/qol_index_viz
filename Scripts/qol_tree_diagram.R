@@ -1,6 +1,8 @@
 # Load library
 install.packages("collapsibleTree")
+install.packages("htmlwidgets")
 library(collapsibleTree)
+library(htmlwidgets)
 
 #set working directory
 setwd("data")
@@ -35,6 +37,9 @@ tree <- collapsibleTree( qol_indicator_dimension, hierarchy = c("Dimension","Ind
                          )
 tree
 
+
+# save widget
+saveWidget(tree, file=paste0( getwd(), "qol_tree.html"))
 
 
 
